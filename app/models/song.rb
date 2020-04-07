@@ -13,6 +13,7 @@ class Song < ActiveRecord::Base
     drake = Artist.find_by(name: "Drake")
     if drake.nil?
       drake = Artist.new(name: "Drake")
+      drake.save
     end
     drake.songs << self
   end
